@@ -4,15 +4,7 @@ var express = require('express');
 //Set up mongoose connection
 var mongoose = require('mongoose');
 
-const username = encodeURIComponent("Timu");
-const password = encodeURIComponent("SxINJYR4pNK9Paos");
-const cluster = "timu.dw6wo.mongodb.net";
-const database = "book_records";
-// const authSource = "<authSource>";
-// const authMechanism = "<authMechanism>";
-
 var mongoDB = process.env.MONGODB_URI;
- // || `mongodb+srv://${username}:${password}@${cluster}/${database}?retryWrites=true&w=majority`;
 mongoose.connect(mongoDB);
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));

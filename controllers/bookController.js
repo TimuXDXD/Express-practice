@@ -7,6 +7,11 @@ const { body, check, validationResult, sanitizeBody } = require('express-validat
 var async = require('async');
 
 exports.index = function(req, res) {
+  ip = req.headers['x-forwarded-for'] ||
+     req.socket.remoteAddress ||
+     null;
+  console.log(ip);
+  
   async.parallel({
       book_count: function(callback) {
           Book.count({}, callback); // Pass an empty object as match condition to find all documents of this collection
