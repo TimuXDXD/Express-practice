@@ -12,8 +12,8 @@ var http = require('http');
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3000'); // for testing on localhost, fixed the port
-// var port = normalizePort(process.env.PORT); // for Heroku App, cannot fixed the port
+// var port = normalizePort(process.env.PORT || '3000'); // for testing on localhost, fixed the port
+var port = normalizePort(process.env.PORT); // for Heroku App, cannot fixed the port
 app.set('port', port);
 
 /**
